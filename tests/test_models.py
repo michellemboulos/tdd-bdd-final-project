@@ -166,8 +166,8 @@ class TestProductModel(unittest.TestCase):
     def test_find_by_availability(self):
         """Find Products by Availability"""
         products = ProductFactory.create_batch(10)
-        for p in products:
-            p.create()
+        for prod in products:
+            prod.create()
         available = products[0].available
         count = len([p for p in products if p.available == available])
         found = Product.find_by_availability(available)
@@ -178,8 +178,8 @@ class TestProductModel(unittest.TestCase):
     def test_find_by_category(self):
         """Find Products by category"""
         products = ProductFactory.create_batch(10)
-        for p in products:
-            p.create()
+        for prod in products:
+            prod.create()
         category = products[0].category
         count = len([p for p in products if p.category == category])
         found = Product.find_by_category(category)
